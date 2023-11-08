@@ -21,7 +21,7 @@ public class Search1 {
     }
 
     /**
-     * 二分查找
+     * 二分查找-基础版
      * <p>
      * i和j代表的索引范围是：[i,j]
      *
@@ -49,7 +49,7 @@ public class Search1 {
     }
 
     /**
-     * 二分查找-升级版
+     * 二分查找-改动版
      * <p>
      * 时间复杂度是O(log_2(n))，比findIndex时间复杂度优。
      * <p>

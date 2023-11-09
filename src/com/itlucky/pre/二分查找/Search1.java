@@ -54,6 +54,9 @@ public class Search1 {
      * 时间复杂度是O(log_2(n))，比findIndex时间复杂度优。
      * <p>
      * 注意与上面写法的区分，i和j代表的索引范围是：[i,j），此时的j代表的是不包含要查找的范围
+     * <p>
+     * arr   [1,3,5,6,9,11,15,25]
+     * index  0 1 2 3 4  5  6  7
      *
      * @param args
      * @param target
@@ -62,7 +65,7 @@ public class Search1 {
     private static int findIndex_2(int[] args, int target) {
         int i = 0;
         int j = args.length;
-
+        // 注意：这里不能加上等于，否则会出现死循环
         while (i < j) {
             int m = (i + j) >>> 1;
             if (target < args[m]) {
@@ -92,6 +95,21 @@ public class Search1 {
                 return i;
             }
         }
+        return -1;
+    }
+
+    /**
+     * 二分查找--平衡版
+     * <p>
+     * 减少循环中的判断次数，将最后一个数的比较放在循环外判断，循环中要处理的就是不断缩小范围。
+     *
+     * @param a
+     * @param target
+     * @return
+     */
+    private static int findIndex_4(int[] a, int target) {
+
+
         return -1;
     }
 

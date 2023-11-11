@@ -10,13 +10,15 @@ public class Search1 {
     public static void main(String[] args) {
 
         int[] digital = {1, 3, 5, 6, 7, 9, 10, 14, 16, 23, 29, 33, 38};
-        int target = 99;
+        int target = 23;
 
-        System.out.println(findIndex(digital, target));
+//        System.out.println(findIndex(digital, target));
+//
+//        System.out.println(findIndex_2(digital, target));
+//
+//        System.out.println(findIndex_3(digital, target));
 
-        System.out.println(findIndex_2(digital, target));
-
-        System.out.println(findIndex_3(digital, target));
+        System.out.println(findIndex_4(digital, target));
 
     }
 
@@ -102,6 +104,8 @@ public class Search1 {
      * 二分查找--平衡版
      * <p>
      * 减少循环中的判断次数，将最后一个数的比较放在循环外判断，循环中要处理的就是不断缩小范围。
+     * <p>
+     * [i,j)
      *
      * @param a
      * @param target
@@ -109,6 +113,21 @@ public class Search1 {
      */
     private static int findIndex_4(int[] a, int target) {
 
+        int i = 0, j = a.length;
+
+        while (i + 1 < j) {
+            int m = (i + j) >>> 1;
+
+            if (target < a[m]) {
+                j = m;
+            } else {
+                i = m ;
+            }
+        }
+
+        if (a[i] == target) {
+            return i;
+        }
 
         return -1;
     }
